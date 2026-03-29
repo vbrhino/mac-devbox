@@ -15,7 +15,9 @@
       system = "aarch64-darwin";
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfreePredicate = _: false;
+        config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+          "terraform"   # BSL 1.1 — required for IaC workflows
+        ];
       };
     in
     {
