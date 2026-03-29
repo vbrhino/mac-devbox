@@ -1,0 +1,40 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Syntax check
+        run: |
+          echo "Checking bash syntax..."
+          bash -n install.sh
+          for f in scripts/*.sh; do
+            echo "  $f"
+            bash -n "$f"
+          done
+          echo "All scripts pass syntax check"
+
+      - name: Shellcheck
+        run: |
+          shellcheck --severity=warning install.sh scripts/*.sh
+
+  nix:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Check flake
+        run: nix flake check
+
+      - name: Evaluate home-manager config
+        run: nix build .#homeConfigurations.default.activationPackage --dry-run

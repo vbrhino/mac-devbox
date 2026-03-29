@@ -1,0 +1,5 @@
+# Only report warnings and above (ignore info/style false positives).
+# SC1091: can't follow sourced runtime files (expected — they don't exist at lint time)
+# SC2016: $VAR in single quotes (intentional in heredocs written to shell scripts)
+# SC2317: unreachable code (false positive for sourced-vs-executed script pattern)
+severity=warning
