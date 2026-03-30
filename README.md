@@ -28,24 +28,34 @@ That's it. Get a coffee — first run takes ~15 minutes.
 - Internet connection
 - ~15 GB free disk space
 
-Nothing else. Homebrew, Nix, Xcode CLT — all installed automatically.
+Nothing else. Git, Homebrew, Nix, and all tools are installed automatically.
 
 ---
 
 ## Step-by-step
 
-### 1. Run the installer
+### 1. Open a terminal
+
+Press **`Cmd + Space`**, type **Terminal**, press **Enter**.
+
+> Once mac-devbox is installed you'll use **Warp** — a much better terminal. But for bootstrapping, the built-in Terminal.app is fine.
+
+### 2. Run the installer
+
+Paste this into Terminal and press Enter:
 
 ```bash
 git clone https://github.com/vbrhino/mac-devbox.git ~/mac-devbox && ~/mac-devbox/install.sh
 ```
 
-> **Note:** If Xcode Command Line Tools aren't installed yet, a dialog will appear. Click **Install**, wait for it to finish, then re-run the command above.
+> **Fresh Mac?** The first time you run `git`, macOS may show a popup:
+> *"The xcode-select command line developer tools are required"* → click **Install**.
+> Wait ~5 minutes for it to finish, then paste the command again.
 
-The installer will:
+The installer takes ~15 minutes on first run. It will:
 1. Install Xcode Command Line Tools (if missing)
 2. Install Homebrew
-3. Install all GUI apps from `Brewfile`
+3. Install all GUI apps from `Brewfile` (Warp, IntelliJ, Brave, Bitwarden, Slack…)
 4. Apply macOS system defaults (scroll direction, Dock, Finder, screenshots…)
 5. Install Nix
 6. Install all 170+ CLI tools via home-manager
