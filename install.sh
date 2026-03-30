@@ -65,6 +65,19 @@ fi
 
 export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
 
+# Verify nix is actually usable in this shell (new terminal needed after first install)
+if ! command -v nix &>/dev/null; then
+  echo ""
+  echo "╔══════════════════════════════════════════════════════════════╗"
+  echo "║  Nix was installed but needs a new terminal to activate.    ║"
+  echo "║                                                              ║"
+  echo "║  ➜  Close this terminal, open a new one, then re-run:       ║"
+  echo "║     bash ~/mac-devbox/install.sh                            ║"
+  echo "╚══════════════════════════════════════════════════════════════╝"
+  echo ""
+  exit 0
+fi
+
 # ── 5. Enable flakes ──────────────────────────────────────────────────────
 mkdir -p "$HOME/.config/nix"
 if ! grep -q "experimental-features" "$HOME/.config/nix/nix.conf" 2>/dev/null; then
