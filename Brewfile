@@ -26,10 +26,10 @@ cask "slack"
 cask "microsoft-teams"
 
 # ── Mail ────────────────────────────────────────────────────────────────────
-cask "spark-desktop"         # Multi-account mail client
+cask "readdle-spark"       # Multi-account mail client
 
 # ── Containers ──────────────────────────────────────────────────────────────
-cask "docker"                # Docker Desktop (includes docker + compose CLI)
+cask "docker-desktop"        # Docker Desktop (includes docker + compose CLI)
 
 # ── Productivity & launcher ─────────────────────────────────────────────────
 cask "raycast"               # Launcher, clipboard history, window management
@@ -42,7 +42,7 @@ cask "cheatsheet"            # Hold ⌘ in any app to see all its shortcuts
 
 # ── Menu bar ────────────────────────────────────────────────────────────────
 cask "stats"                 # System monitor in menu bar (CPU, RAM, network)
-cask "ice"                   # Menu bar organiser / icon hider
+cask "jordanbaird-ice"       # Menu bar organiser / icon hider
 
 # ── Utilities ───────────────────────────────────────────────────────────────
 cask "the-unarchiver"        # Opens zip, rar, 7z, tar — like 7-Zip
