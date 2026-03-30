@@ -23,7 +23,7 @@ done
 export PATH="$HOME/.nix-profile/bin:$HOME/.local/bin:/opt/homebrew/bin:$PATH"
 
 FLAKE_DIR="${FLAKE_DIR:-$HOME/mac-devbox}"
-REPO="<your-org>/mac-devbox"
+REPO="vbrhino/mac-devbox"
 
 # ── 1. Check for new mac-devbox release ──────────────────────────────
 update_mac_devbox() {
