@@ -60,6 +60,10 @@ setup_gh() {
     gh auth login
   fi
 
+  # Wire gh token into git so HTTPS pushes never prompt for password
+  gh auth setup-git
+  echo "  git credential helper configured (no password prompts)"
+
   # Update Nix access token
   NIX_CONF="$HOME/.config/nix/nix.conf"
   if [ -f "$NIX_CONF" ]; then
