@@ -5,8 +5,6 @@
 # Install all at once:   brew bundle --file=~/mac-devbox/Brewfile
 # Check what's missing:  brew bundle check --file=~/mac-devbox/Brewfile
 
-tap "homebrew/cask-fonts"
-
 # ── Terminal ────────────────────────────────────────────────────────────────
 cask "warp"                  # AI-native terminal
 

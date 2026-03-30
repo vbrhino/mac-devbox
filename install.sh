@@ -44,7 +44,7 @@ fi
 
 # ── 2. Install GUI apps & fonts via Brewfile ─────────────────────────────
 info "Installing GUI apps and fonts via Brewfile..."
-brew bundle --file="$FLAKE_DIR/Brewfile" --no-upgrade
+brew bundle --file="$FLAKE_DIR/Brewfile" --no-upgrade --no-lock || warn "Some casks failed — re-run: brew bundle --file=~/mac-devbox/Brewfile"
 ok "Brewfile apps installed"
 
 # ── 3. Apply macOS system defaults ──────────────────────────────────────
